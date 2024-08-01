@@ -1,0 +1,16 @@
+[package]
+name = "blkjck"
+version = "0.1.0"
+description = "blackjack but crypto"
+edition = "2021"
+
+[dependencies]
+solana-program = "1.16.10"
+arrayref = "0.3.7"
+borsh = "0.9.3"
+borsh-derive = "0.9.1"
+rand = "0.8.4"
+
+[lib]
+name = "blkjck"
+crate-type = ["cdylib", "lib"]
