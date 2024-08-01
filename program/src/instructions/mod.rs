@@ -1,5 +1,3 @@
-pub mod dealer;
+pub mod deck;
 pub mod player;
-
-pub use repository::*;
-pub use player::*;
+pub mod table;

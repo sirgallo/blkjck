@@ -7,18 +7,18 @@
 
 ### Accounts
 
-There are two basic accounts that manage state within `athn`, which include:
+There are two basic accounts that manage state within `blkjck`, which include:
 
-  - repository
-  - user
+  - player
+  - table
 
-#### Repository
+#### Dealer
 
 The repository account is a program derived account which contains the following struct signature:
 
 ```rs
 #[derive(BorshSerialize, BorshDeserialize, Debug)]
-pub struct Repository {
+pub struct Table {
   pub repo_owner: Pubkey,
   pub name: String,
   pub contributors: Vec<Pubkey>,
