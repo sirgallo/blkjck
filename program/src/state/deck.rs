@@ -1,9 +1,13 @@
-#[derive(Clone, Copy, Debug)]
+use borsh::{BorshDeserialize, BorshSerialize, BorshSchema};
+
+
+#[derive(BorshSerialize, BorshDeserialize, BorshSchema, Clone, Debug)]
 pub struct Card {
 	pub suit: Suit,
 	pub rank: Rank,
 }
 
+#[derive(BorshSerialize, BorshDeserialize, Clone, Debug)]
 pub struct Deck {
 	pub cards: Vec<Card>, // 3 decks [Card; 52 * 3]
   pub round: u8, // the current round after each shuffle
@@ -11,7 +15,7 @@ pub struct Deck {
 }
 
 
-#[derive(Clone, Copy, Debug)]
+#[derive(BorshSerialize, BorshDeserialize, BorshSchema, Clone, Copy, Debug)]
 pub enum Rank { 
   Two, 
   Three, 
@@ -28,7 +32,7 @@ pub enum Rank {
   Ace
 }
 
-#[derive(Clone, Copy, Debug)]
+#[derive(BorshSerialize, BorshDeserialize, BorshSchema, Clone, Copy, Debug)]
 pub enum Suit { 
   Hearts, 
   Diamonds, 
@@ -36,7 +40,7 @@ pub enum Suit {
   Spades
 }
 
-#[derive(PartialEq)]
+#[derive(BorshSerialize, BorshDeserialize, BorshSchema, Clone, Debug, PartialEq)]
 pub enum Status {
   Ready, // awaiting new round
   Ongoing, // round in progress

@@ -12,9 +12,9 @@ There are two basic accounts that manage state within `blkjck`, which include:
   - player
   - table
 
-#### Dealer
+#### Table
 
-The repository account is a program derived account which contains the following struct signature:
+The table account is a program derived account which contains the following struct signature:
 
 ```rs
 #[derive(BorshSerialize, BorshDeserialize, Debug)]

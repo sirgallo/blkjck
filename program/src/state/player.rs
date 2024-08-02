@@ -1,18 +1,17 @@
 use borsh::{BorshDeserialize, BorshSerialize};
-use solana_program::pubkey::Pubkey;
 
 
 /*
-User Account:
+  Player:
 
-The user account acts as a way to associate existing or new repositories with a particular wallet.
-This is not a program derived account.
+  The player account acts as a way to associate existing or new tables with a particular wallet.
+  This is not a program derived account.
 
-The user account should act more as a lookup, where a user account will have 1-n repositories.
+  The player account should act more as a lookup, where a user account will have 1-n repositories.
 */
 #[derive(BorshSerialize, BorshDeserialize)]
 pub struct Player {
-  pub owner: Pubkey, // pub key of wallet for user --> this has to be owner, weird enforcement, just make implicit 
+  // pub owner: Pubkey, // pub key of wallet for user --> this has to be owner, weird enforcement, just make implicit 
   pub name: String,
   pub rank: u64,
   pub rounds: u64,

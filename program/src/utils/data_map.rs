@@ -13,6 +13,7 @@ K --> the key type
 
 V --> the value type
 */
+#[derive(Debug)]
 pub struct DataMap<K, V>
 where 
   K: Ord + BorshSerialize + BorshDeserialize + BorshSchema,
