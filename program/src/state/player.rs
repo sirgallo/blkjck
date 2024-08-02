@@ -1,4 +1,5 @@
 use borsh::{BorshDeserialize, BorshSerialize};
+use solana_program::pubkey::Pubkey;
 
 
 /*
@@ -11,8 +12,8 @@ The user account should act more as a lookup, where a user account will have 1-n
 */
 #[derive(BorshSerialize, BorshDeserialize)]
 pub struct Player {
-  // pub owner: Pubkey, // pub key of wallet for user --> this has to be owner, weird enforcement, just make implicit 
-  pub display_name: String,
+  pub owner: Pubkey, // pub key of wallet for user --> this has to be owner, weird enforcement, just make implicit 
+  pub name: String,
   pub rank: u64,
   pub rounds: u64,
   pub wins: u64,

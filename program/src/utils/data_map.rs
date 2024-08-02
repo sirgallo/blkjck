@@ -27,12 +27,7 @@ where
   K: Ord + BorshSerialize + BorshDeserialize + BorshSchema,
   V: BorshSerialize + BorshDeserialize + BorshSchema
 {
-
-  pub fn new() -> Self {
-    DataMap { map: BTreeMap::new() }
-  }
-
-  // write
+  pub fn new() -> Self { DataMap{ map: BTreeMap::new() } }
 
   pub fn put(&mut self, key: K, val: V) -> Option<V> {
     self.map.insert(key, val)
@@ -42,8 +37,6 @@ where
     self.map.remove(&key)
   }
 
-  // read
-  
   pub fn get(&self, key: K) -> Option<&V> {
     self.map.get(&key)
   }
@@ -51,7 +44,6 @@ where
   pub fn iter(&self) -> std::collections::btree_map::Iter<K, V> {
     self.map.iter()
   }
-
 }
 
 
@@ -60,7 +52,6 @@ where
   K: Ord + BorshSerialize + BorshDeserialize + BorshSchema,
   V: BorshSerialize + BorshDeserialize + BorshSchema
 {
-
   fn serialize<W: std::io::Write>(&self, writer: &mut W) -> std::io::Result<()> {
     let len = self.map.len() as u32;
     len.serialize(writer)?;
@@ -72,7 +63,6 @@ where
 
     Ok(())
   }
-
 }
 
 
@@ -81,7 +71,6 @@ where
   K: Ord + BorshSerialize + BorshDeserialize + BorshSchema,
   V: BorshSerialize + BorshDeserialize + BorshSchema
 {
-
   fn deserialize(buf: &mut &[u8]) -> std::io::Result<Self> {
     let len = u32::deserialize(buf)? as usize;
     let mut map = BTreeMap::new();
@@ -94,5 +83,4 @@ where
 
     Ok(DataMap { map })
   }
-
 }

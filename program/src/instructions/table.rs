@@ -10,7 +10,6 @@ use solana_program::{
 // create_repository creates a new program derived account, where the data argument contains metadata like the address and visibility
 pub fn create(program_id: &Pubkey, accounts: &[AccountInfo], __data: &[u8]) -> ProgramResult {
   let __rent: Rent = Rent::get()?; // system variable, get global rent val
-
   let accounts_iter: &mut std::slice::Iter<'_, AccountInfo<'_>> = &mut accounts.iter();
   let table_account: &AccountInfo<'_> = next_account_info(accounts_iter)?; // PDA
   let __owner_account: &AccountInfo<'_> = next_account_info(accounts_iter)?; // user's account

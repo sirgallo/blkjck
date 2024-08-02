@@ -12,10 +12,29 @@ pub struct Deck {
 
 
 #[derive(Clone, Copy, Debug)]
-pub enum Rank { Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King, Ace }
+pub enum Rank { 
+  Two, 
+  Three, 
+  Four, 
+  Five, 
+  Six, 
+  Seven, 
+  Eight, 
+  Nine, 
+  Ten, 
+  Jack, 
+  Queen, 
+  King, 
+  Ace
+}
 
 #[derive(Clone, Copy, Debug)]
-pub enum Suit { Hearts, Diamonds, Clubs, Spades }
+pub enum Suit { 
+  Hearts, 
+  Diamonds, 
+  Clubs, 
+  Spades
+}
 
 #[derive(PartialEq)]
 pub enum Status {
@@ -27,7 +46,6 @@ pub enum Status {
 
 pub const DECK_SIZE: usize = 52;
 pub const TOTAL_DECKS: usize = 3;
-
 pub const SUITS: [Suit; 4] = [ Suit::Hearts, Suit::Diamonds, Suit::Clubs, Suit::Spades ];
 pub const RANKS: [Rank; 13]= [
   Rank::Two, // 2
