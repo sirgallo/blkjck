@@ -9,7 +9,7 @@ pub struct Card {
 
 #[derive(BorshSerialize, BorshDeserialize, Clone, Debug)]
 pub struct Deck {
-	pub cards: Vec<Card>, // 3 decks [Card; 52 * 3]
+  pub cards: Vec<Card>, // 3 decks [Card; 52 * 3]
   pub round: u8, // the current round after each shuffle
   pub status: Status // the status of the current round
 }
