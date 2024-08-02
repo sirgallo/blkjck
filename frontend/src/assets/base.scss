@@ -1,0 +1,109 @@
+:root {
+  --v-blue-primary: rgb(25, 118, 210);
+  --v-soft-blue-primary: rgb(144, 202, 249);
+  --v-blue-info: rgb(2, 136, 209);
+  --v-soft-blue-info: rgb(144, 202, 249);
+  --v-blue-highlight: rgb(3, 169, 244);
+  --v-soft-blue-highlight: rgb(79, 195, 247);
+  --v-pale-blue: rgb(237, 246, 249);
+
+  --v-grey: rgb(117, 117, 117);
+  --v-grey-text-primary: rgb(33, 33, 33);
+  --v-grey-text-secondary: rgb(97, 97, 97);
+  --v-soft-grey: rgb(207, 216, 220);
+  --v-soft-grey-text-primary: rgb(229, 229, 229);
+  --v-soft-grey-text-seconday: rgb(189, 189, 189);
+  --v-slate-grey: rgb(75, 85, 99);
+
+  --v-red: rgb(255, 143, 0);
+  --v-soft-red: rgb(255, 209, 128);
+
+  --v-green: rgb(56, 142, 60);
+  --v-soft-green: rgb(165, 214, 167);
+
+  --v-off-white: rgb(250, 250, 250);
+
+  --v-background-light: rgb(250, 250, 250);
+  --v-background-light-mute: rgb(240, 240, 240);
+  --v-background-dark: rgb(48, 48, 48);
+  --v-background-dark-mute: rgb(58, 58, 58);
+
+  --v-text-light: rgb(33, 33, 33);
+  --v-text-dark: rgb(229, 229, 229);
+
+  --v-border-light: rgb(224, 224, 224);
+  --v-border-light-mute: rgb(200, 200, 200);
+  --v-border-dark: rgb(81, 81, 81);
+  --v-border-dark-mute: rgb(105, 105, 105);
+
+  --v-action-light: rgb(30, 136, 229);
+  --v-action-dark: rgb(129, 212, 250);
+
+  --v-hover-light: rgb(77, 182, 172);
+  --v-hover-dark: rgb(239, 154, 154);
+
+  --v-action: var(--v-action-light);
+  --v-background: var(--v-background-light);
+  --v-background-mute: var(--v-background-light-mute);
+  --v-background-invert: var(--v-background-dark);
+  --v-border: var(--v-border-light);
+  --v-border-mute: var(--v-border-light-mute);
+  --v-boxshadow: var(--v-blue-highlight);
+  --v-button: var(--v-grey);
+  --v-container: var(--v-pale-blue);
+  --v-divider: var(--v-border-light);
+  --v-hover: var(--v-hover-light);
+  --v-text-primary: var(--v-grey-text-primary);
+  --v-text-secondary: var(--v-grey-text-secondary);
+  --v-text-primary-invert: var(--v-soft-grey-text-primary);
+  --v-text-secondary-invert: var(--v-soft-grey-text-secondary);
+  --v-title-border: var(--v-blue-primary);
+
+  --section-gap: 160px;
+}
+
+:root.dark {
+  --v-action: var(--v-action-dark);
+  --v-background: var(--v-background-dark);
+  --v-background-mute: var(--v-background-dark-mute);
+  --v-background-invert: var(--v-background-light);
+  --v-border: var(--v-border-dark);
+  --v-border-mute: var(--v-border-dark-mute);
+  --v-boxshadow: var(--v-soft-blue-highlight);
+  --v-button: var(--v-soft-grey);
+  --v-container: var(--v-slate-grey);
+  --v-divider: var(--v-border-dark);
+  --v-hover: var(--v-hover-dark);
+  --v-text-primary: var(--v-soft-grey-text-primary);
+  --v-text-secondary: var(--v-soft-grey-text-secondary);
+  --v-text-primary-invert: var(--v-grey-text-primary);
+  --v-text-secondary-invert: var(--v-grey-text-secondary);
+  --v-title-border: var(--v-soft-blue-primary);
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--v-text-primary);
+  background: var(--v-background);
+  transition: color 0.5s, background-color 0.5s;
+  line-height: 1.6;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+}

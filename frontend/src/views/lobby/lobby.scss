@@ -1,0 +1,10 @@
+@import '@app/common.scss';
+
+.overview-container {
+  @extend .flex-vertical;
+
+  justify-content: flex-start;
+  flex-grow: 1;
+  padding: 0.5rem 0.25rem;
+  margin: 0.5rem;
+}

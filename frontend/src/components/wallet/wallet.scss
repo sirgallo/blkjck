@@ -1,0 +1,25 @@
+@import '@app/common.scss';
+
+
+.wallet-button {
+  @extend .flex-horizontal;
+
+  flex-grow: 1;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-weight: bold;
+  color: var(--v-text-primary);
+  background-color: transparent;
+
+  &:hover {
+    background-color: var(--v-hover);
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: var(--v-active);
+  }
+}

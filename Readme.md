@@ -1,3 +1,3 @@
 # blkjck
 
-## blackjack but 
+## blackjack but crypto

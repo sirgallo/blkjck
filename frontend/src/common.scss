@@ -1,0 +1,25 @@
+.flex-horizontal {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+.centered-row {
+  @extend .flex-horizontal;
+  
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-aligned-row {
+  @extend .flex-horizontal;
+
+  flex-grow: 1;
+  justify-content: flex-start;
+  align-items: center;
+}

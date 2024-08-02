@@ -1,0 +1,1 @@
+export const LOCAL_PROGRAM_ID = '5nVrfBkPZSxerxMYHShh7tzojUHCrwaPUx2ePfKr3ZTS';

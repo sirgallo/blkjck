@@ -1,0 +1,10 @@
+.blinker-icon {
+  padding: 0.25rem;
+  animation: blinker 2s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
