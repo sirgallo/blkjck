@@ -3,8 +3,8 @@ use borsh::{BorshDeserialize, BorshSerialize, BorshSchema};
 
 #[derive(BorshSerialize, BorshDeserialize, BorshSchema, Clone, Debug)]
 pub struct Card {
-	pub suit: Suit,
-	pub rank: Rank,
+  pub suit: Suit,
+  pub rank: Rank,
 }
 
 #[derive(BorshSerialize, BorshDeserialize, Clone, Debug)]
