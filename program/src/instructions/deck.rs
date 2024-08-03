@@ -10,12 +10,16 @@ use crate::state::deck::{Card, Deck, Status, RANKS, SUITS, DECK_SIZE, TOTAL_DECK
 */
 impl Deck {
   pub fn new() -> Self { 
-    return Deck{ cards: shuffle_deck(), round: 0, status: Status::Ready } 
+    return Deck{
+      cards: shuffle_cards(),
+      round: 0,
+      status: Status::Ready
+    }
   }
 
   pub fn deal_card(&mut self) -> Option<Card> {
     if self.trigger_reshuffle() { // check if a reshuffle is required
-      self.cards = shuffle_deck();
+      self.cards = shuffle_cards();
       self.status = Status::Ongoing;
     }
 
@@ -42,17 +46,15 @@ impl Deck {
     1.) initialize the deck in order
     2.) shuffle the deck in place
 */
-fn shuffle_deck() -> Vec<Card> {
-  let mut deck: Vec<Card> = Vec::with_capacity(DECK_SIZE * TOTAL_DECKS);
+fn shuffle_cards() -> Vec<Card> {
+  let mut cards: Vec<Card> = Vec::with_capacity(DECK_SIZE * TOTAL_DECKS);
   for _ in 0..TOTAL_DECKS {
     for &suit in &SUITS {
-      for &rank in &RANKS { deck.push(Card{ suit, rank }); }
+      for &rank in &RANKS { cards.push(Card{ suit, rank }); }
     }
   }
 
   let mut rand_num_gen = thread_rng();
-  deck.shuffle(&mut rand_num_gen);
-
-  println!("{:?}", deck);
-  return deck
+  cards.shuffle(&mut rand_num_gen);
+  return cards;
 }

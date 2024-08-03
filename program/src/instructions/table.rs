@@ -7,8 +7,8 @@ use solana_program::{
 };
 
 
-// create_repository creates a new program derived account, where the data argument contains metadata like the address and visibility
-pub fn create(program_id: &Pubkey, accounts: &[AccountInfo], __data: &[u8]) -> ProgramResult {
+// create a new program derived account, where the data argument contains metadata for the table
+pub fn open(program_id: &Pubkey, accounts: &[AccountInfo], __data: &[u8]) -> ProgramResult {
   let __rent: Rent = Rent::get()?; // system variable, get global rent val
   let accounts_iter: &mut std::slice::Iter<'_, AccountInfo<'_>> = &mut accounts.iter();
   let table_account: &AccountInfo<'_> = next_account_info(accounts_iter)?; // PDA
@@ -20,11 +20,30 @@ pub fn create(program_id: &Pubkey, accounts: &[AccountInfo], __data: &[u8]) -> P
   Ok(())
 }
 
+// make a table unusable
+pub fn close(__accounts: &[AccountInfo]) -> ProgramResult {
+  Ok(())
+}
 
-// update_is_public updates repository visibility. If is_public is false, only the owner and contributors can view the repository.
-pub fn deal(accounts: &[AccountInfo], __data: &[u8]) -> ProgramResult {
+// start a round of blackjack
+pub fn start_round(accounts: &[AccountInfo]) -> ProgramResult {
   let accounts_iter: &mut std::slice::Iter<'_, AccountInfo<'_>> = &mut accounts.iter();
   let __owner_account: &AccountInfo<'_> = next_account_info(accounts_iter)?; // owner's account
 
+  Ok(())
+}
+
+// finish the round of blackjack
+pub fn finish_round(__accounts: &[AccountInfo]) -> ProgramResult {
+  Ok(())
+}
+
+// payout winners from the liquidity pool according to the size of their bets
+pub fn payout(__accounts: &[AccountInfo]) -> ProgramResult {
+  Ok(())
+}
+
+// collect bets from losing players and deposit into the liquidity pool
+pub fn collect(__accounts: &[AccountInfo]) -> ProgramResult {
   Ok(())
 }
